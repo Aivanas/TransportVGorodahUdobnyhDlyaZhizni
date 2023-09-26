@@ -5,25 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Watsap"
         mc:Ignorable="d"
+        FontFamily="Tektur"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Style="{StaticResource MaterialDesignWindow}"
         Title="NewChatWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="44*"/>
-            <RowDefinition Height="339*"/>
-            <RowDefinition Height="51*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="116*"/>
-            <ColumnDefinition Width="118*"/>
-            <ColumnDefinition Width="567*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock TextWrapping="Wrap" Text="Пользователи" Margin="10,10,10,10" Grid.ColumnSpan="2"/>
-        <ListBox x:Name="usersLbx" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,10,10,10" Grid.ColumnSpan="2"/>
-        <Button x:Name="logCheckBtn" Grid.Column="2" Content="Посмотреть историю" HorizontalAlignment="Center" Height="26" Margin="0,8,0,0" VerticalAlignment="Top" Width="548"/>
-        <Button x:Name="exitBtn" Content="Выйти" HorizontalAlignment="Center" Height="31" Grid.Row="2" VerticalAlignment="Center" Width="96" Click="exitBtn_Click"/>
-        <Button x:Name="sendBtn" Grid.Column="1" Content="Отправить" Height="31" Margin="10,0,10,0" Grid.Row="2" VerticalAlignment="Center" Click="sendBtn_Click"/>
-        <TextBox x:Name="messageTb" Grid.Column="2" Grid.Row="2" TextWrapping="Wrap" Text="Введите сообщение" Margin="10,10,10,10"/>
-        <ListBox x:Name="messagesLbx" Grid.Column="2" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,10,10,10"/>
+        <TextBlock TextWrapping="Wrap" Text="Пользователи" Margin="4" Grid.ColumnSpan="2"/>
+        <ListBox x:Name="usersLbx" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="4" Grid.ColumnSpan="2"/>
+        <Button x:Name="logCheckBtn" Grid.Column="1" Content="Посмотреть историю" HorizontalAlignment="Center" Margin="4"  VerticalAlignment="Top" />
+        <Button x:Name="exitBtn" Content="Выйти" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Click="exitBtn_Click"/>
+        <Button x:Name="sendBtn" 
+                Content="{materialDesign:PackIcon SendVariant}"
+                Grid.Column="2" Margin="4" Grid.Row="2" VerticalAlignment="Center" Click="sendBtn_Click"/>
+        <TextBox x:Name="messageTb" Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" Text="Введите сообщение" Margin="4"/>
+        <ListBox x:Name="messagesLbx" Grid.Column="1" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="4"/>
 
     </Grid>
 </Window>

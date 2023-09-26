@@ -4,20 +4,45 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Watsap"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="283" Width="393">
+        Style="{StaticResource MaterialDesignWindow}"
+        Title="MainWindow" Height="400" Width="500">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="54*"/>
-            <RowDefinition Height="53*"/>
-            <RowDefinition Height="49*"/>
-            <RowDefinition Height="51*"/>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-        <Image Source="/watsap.png" Margin="117,0,94,10" Grid.RowSpan="2"/>
-        <TextBox x:Name="userNameTb" TextWrapping="Wrap" VerticalAlignment="Center" Height="25" Grid.Row="1" Margin="10,0,10,0" AutomationProperties.HelpText="Введите имя пользователя"/>
-        <Button x:Name="newChatBtn" Content="Создать новый чат" Height="26" Margin="10,0,10,0" Grid.Row="2" VerticalAlignment="Center" Click="newChatBtn_Click" Background="Black" Foreground="White" BorderBrush="{x:Null}"/>
-        <Button x:Name="oldChatBtn" Content="Подключиться к старому чату" Height="27" Grid.Row="3" VerticalAlignment="Center" Margin="10,0,10,0" Click="oldChatBtn_Click" BorderBrush="{x:Null}" Foreground="White" Background="Black"/>
-        <TextBox x:Name="ipTb" Height="28" Margin="10,10,10,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" AutomationProperties.HelpText="Введите ip"/>
+        <Image Source="/watsap.png" Height="Auto" Margin="10"/>
+        <TextBox 
+            Text="Boris"
+            FontFamily="Tektur"
+            Style="{StaticResource MaterialDesignFilledTextBox}"
+    materialDesign:HintAssist.Hint="Введите имя пользователя"
+    IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" x:Name="userNameTb" 
+            VerticalAlignment="Top" Grid.Row="1" 
+            Margin="3"/>
+        <Button 
+            FontFamily="Tektur"
+             Style="{StaticResource MaterialDesignPaperSecondaryDarkButton}"
+            x:Name="newChatBtn" Content="Создать новый чат" Margin="3" Grid.Row="2" 
+            VerticalAlignment="Center" Click="newChatBtn_Click"/>
+        <Button
+            FontFamily="Tektur"
+            Style="{StaticResource MaterialDesignPaperSecondaryDarkButton}"
+            x:Name="oldChatBtn" Content="Подключиться к старому чату" Grid.Row="3" VerticalAlignment="Center" Margin="3" Click="oldChatBtn_Click"/>
+        <TextBox 
+            Text="127.0.0.1"
+            FontFamily="Tektur"
+            Style="{StaticResource MaterialDesignFilledTextBox}"
+    VerticalAlignment="Top"
+    materialDesign:HintAssist.Hint="Введите IP-адрес сервера или клиента"
+    IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxEnabledComboBox}"
+            
+            x:Name="ipTb" Margin="3" Grid.Row="4" 
+               />
     </Grid>
 </Window>
