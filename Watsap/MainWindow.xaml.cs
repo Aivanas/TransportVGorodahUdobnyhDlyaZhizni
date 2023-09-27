@@ -26,6 +26,7 @@ namespace Watsap
         public MainWindow()
         {
             InitializeComponent();
+            MessageBox.Show("Для супер кайфа установите набор шрифтов из папки проекта");
         }
 
         private void newChatBtn_Click(object sender, RoutedEventArgs e)

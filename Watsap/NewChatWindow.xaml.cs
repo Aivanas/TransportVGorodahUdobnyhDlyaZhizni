@@ -43,9 +43,11 @@ namespace Watsap
 
         }
 
-        private void sendBtn_Click(object sender, RoutedEventArgs e)
+        private async void sendBtn_Click(object sender, RoutedEventArgs e)
         {
-            sendMsg(messageTb.Text);
+            if (messageTb.Text != null)      
+                await sendMsg(messageTb.Text); 
+                   
             Thread.Sleep(5);
         }
         private async Task sendMsg(string message)

@@ -111,6 +111,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Tektur-VariableFont_wdth,wght.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -29,7 +29,7 @@
             FontFamily="Tektur"
              Style="{StaticResource MaterialDesignPaperSecondaryDarkButton}"
             x:Name="newChatBtn" Content="Создать новый чат" Margin="3" Grid.Row="2" 
-            VerticalAlignment="Center" Click="newChatBtn_Click"/>
+            VerticalAlignment="Center" Click="newChatBtn_Click" Cursor="Hand"/>
         <Button
             FontFamily="Tektur"
             Style="{StaticResource MaterialDesignPaperSecondaryDarkButton}"
